@@ -1,11 +1,11 @@
 print("Welcome to the restaurant helper ")
 
-price = int(input("What was the total bill ? "))
+price = float(input("What was the total bill ? "))
 q1 = input("Would you like to give a tip ? ")
 
 if q1 == "y":
-    tip = int(input("What percentage tip would you like to give ? "))
-    people = int(input("How many people to split the bill ? "))
+    tip = float(input("What percentage tip would you like to give ? "))
+    people = float(input("How many people to split the bill ? "))
     cost = (price*tip/100 + price)/people
     cost = round(cost,2)
     print(f"each person should pay: {cost}")
