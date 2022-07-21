@@ -26,3 +26,5 @@ print('''
              \__...--''
 
 ''')
+
+#This file is imported in the story mode file and does not serve as it's own programme
