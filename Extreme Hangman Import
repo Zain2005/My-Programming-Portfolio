@@ -286,3 +286,5 @@ logo = '''
 |_| |_|\__,_|_| |_|\__, |_| |_| |_|\__,_|_| |_|
                     __/ |                      
                    |___/    \n'''
+
+#This file is imported in the hangman  file and does not serve as it's own programme
