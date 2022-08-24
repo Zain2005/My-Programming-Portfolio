@@ -60,3 +60,5 @@ while True:
             lives += 1
             print_slow(f"Oh no! Unfortunately the letter {guess} is not in your word.\nYou still have {win} letters left to find and only {7-lives} lives left till death.\n{display}\n")
     c_words += guess
+    
+    
