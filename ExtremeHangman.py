@@ -1,0 +1,62 @@
+import random
+from importH import *
+import time
+import sys
+def print_slow(str):
+    for letter in str:
+        sys.stdout.write(letter)
+        sys.stdout.flush()
+        time.sleep(0.08)
+
+print(logo)
+
+
+chosen_word = random.choice(word_list)
+# print(f"Pssst, the solution is {chosen_word}.")
+display = []
+c_words = []
+
+for letter in chosen_word:
+    display.append("_")
+
+win2 = display.count("_")
+x = 0
+lives = 0
+print_slow(f"You have a {win2} letter word.\nGood Luck!\n{display}\n")
+while True:
+    guess = input("\nGuess a letter: ").lower()
+    if guess in c_words:
+        print_slow("You've already chosen the letter {guess}.Go again\n")
+    else:
+        for letter in chosen_word:
+            if letter == guess:
+                display[x] = guess
+            x += 1
+            if x == len(chosen_word):
+                x = 0
+        win = display.count("_")
+        if win == 0:
+            print_slow("YOU WIN !!! WELL DONE")
+            break
+        if guess in chosen_word:
+            print_slow(f"Well done ! The letter {guess} is in your word.\nYou have {win} letters left to go.\n{display}\n")
+        elif guess not in chosen_word:
+            if lives == 0:
+                print(stage)
+            elif lives == 1:
+                print(stage2)
+            elif lives == 2:
+                print(stage3)
+            elif lives == 3:
+                print(stage4)
+            elif lives == 4:
+                print(stage5)
+            elif lives == 5:
+                print(stage6)
+            elif lives == 6:
+                print(stage7)
+                print_slow(f"YOU LOOSE SUCKER !\nYour word was {chosen_word}")
+                break
+            lives += 1
+            print_slow(f"Oh no! Unfortunately the letter {guess} is not in your word.\nYou still have {win} letters left to find and only {7-lives} lives left till death.\n{display}\n")
+    c_words += guess
